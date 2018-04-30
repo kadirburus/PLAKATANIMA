@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> Hafıza Oyunu </title>
+<style>
+
+body
+
+{
+background-image: url(memorybckg.jpg);
+ background-size: 1400px;
+ background-repeat:no-repeat;
+ text-align : center ;
+ width:40%;   
+ margin-left: 32%;
+ margin-right:32%;
+ font-family:Verdana;	 
+ 
+}
+
+
+.new1{  
+              border:6px double #006400;
+               margin-left: 11%;
+			   margin-right: 11%;
+			 	color:#006400;
+				margin-bottom:15px ;
+				background-color:	#E0FFFF;
+				margin-bottom:400px ;
+			  }
+
+			.baslik1 {
+               border:6px double #006400;
+               margin-left: 11%;
+			   margin-right: 11%;
+			 	color:#006400;
+				margin-bottom:15px ;
+				background-color:	#E0FFFF;
+			
+			  }
+
+             .new2{  
+               margin-left: 11%;
+			   margin-right: 11%;
+			 	color:#006400;
+				margin-bottom:15px ;
+			  }
+div#memory_board{
+    
+	background:	#006400;
+	border:#fff 3px solid;
+	width:450px;
+	height:450px;
+	padding:24px;
+	margin:0px auto;
+}
+div#memory_board > div{
+	
+	background:	#006400;
+	border:#fff 3px solid;
+	width:42px;
+	height:42px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:20px;
+	cursor:pointer;
+	text-align:center;
+	
+}
+
+
+ input[type=submit] {
+ 
+	
+	background-color:#006400;
+
+	border-radius:11px;
+	border:6px solid 	#6B8E23;
+	display:inline-block;
+	cursor:pointer;
+	color:#fff;
+	font-family:Verdana;
+	font-size:12px;
+	padding:10px 14px;
+	text-decoration:none;
+	
+	 margin-top:5px;
+ margin-left: 12%;
+margin-right: 12%;
+}
+
+
+.new3{  background-color:#006400; 
+
+	 border-radius:11px; 
+	 border:6px solid 	#6B8E23;
+	 display:inline-block; 
+	 cursor:pointer; 
+	color:#fff;
+	font-family:Verdana;
+     font-size:12px; 
+	 padding:10px 14px; 
+	 text-decoration:none; 
+      margin-left: 12%;
+	  margin-right: 12%;
+
+}
+
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {text-decoration: none;}
+
+
+</style>
+<script>
+
+
+
+var memory_array = ['if','if','(6<8)','(6<8)','x=7','x=7','cout','cout','<<','<<','int','int',';',';','x','x',];
+var memory_values = [];
+var memory_tile_ids = [];
+var tiles_flipped = 0;
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+function newBoard(){
+	tiles_flipped = 0;
+	var output = '';
+    memory_array.memory_tile_shuffle();
+	for(var i = 0; i < memory_array.length; i++){
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+	}
+	document.getElementById('memory_board').innerHTML = output;
+}
+function memoryFlipTile(tile,val){
+	if(tile.innerHTML == "" && memory_values.length < 2){
+		tile.style.background = '#FFF';
+		tile.innerHTML = val;
+		if(memory_values.length == 0){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+		} else if(memory_values.length == 1){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+			if(memory_values[0] == memory_values[1]){
+				tiles_flipped += 2;
+				// Clear both arrays
+				memory_values = [];
+            	memory_tile_ids = [];
+				// Check to see if the whole board is cleared
+				if(tiles_flipped == memory_array.length){
+				
+				
+				}
+			} else {
+				function flip2Back(){
+				    // Flip the 2 tiles back over
+				    var tile_1 = document.getElementById(memory_tile_ids[0]);
+				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
+            	    tile_1.innerHTML = "";
+				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
+            	    tile_2.innerHTML = "";
+				    // Clear both arrays
+				    memory_values = [];
+            	    memory_tile_ids = [];
+				}
+				setTimeout(flip2Back, 700);
+			}
+		}
+	}
+}
+
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+
+	
+
+	<div class="new2" >	
+
+<h1> HAFIZA OYUNU </h1>
+</div>	
+
+
+
+	<div class="baslik1" >	
+<p>Biraz hafızanı çalıştıralım. Aynı olan kartları bul ve sonucundaki kod bloğunu tahmin etmeye çalış. Bol şans! </p>
+</div>	
+
+<div id="memory_board"></div>
+<script>newBoard();</script>
+
+
+<br>
+
+	<div class="new3" >	
+<a href="#sonuc1" style="color:white">SONUÇ</a>
+</div>	
+
+
+<br>
+<input type="submit" onClick="newBoard()" value='YENİ OYUN'>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div class="new1" id="sonuc1">	
+<p>if (6<8) {</p><br>
+<p>int x=7;</p> <br>
+ <p>  cout << x; }</p><br>
+    
+    <p>          Çıktı     </p> 
+         
+    <p>            7        </p>  
+    
+		
+ </p>
+</div>	
+
+
+</body>
+</html>
