@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+
+   <head>
+      <title>QuizUp!</title>
+    
+                <link rel="stylesheet" type="text/css" href="./css/style.css" />
+                
+ 
+    <script src="http://www.fastlearning.in/controller/js/jquery-1.9.1.min.js"></script>
+    
+     <script type="text/javascript">
+	$(document).ready(function() {
+    $('label').click(function() {
+        $('label').removeClass('worngans');
+        $(this).addClass('worngans');
+    });
+});
+	</script>
+   
+    
+   </head>
+   <body >
+   
+   <style> 
+   
+   
+   body 
+{
+		background-image: url(quizbckg.png);
+		 
+			background-repeat: repeat;
+          <!-- background-size: cover;    -->
+		  <!-- margin :8px; -->
+			  
+}
+
+       .new{
+              border:6px dashed #8B0000;
+               margin-left: 33%;
+               margin-right:33%;
+			    width:500px;				
+				height:300px;
+			   }
+			   
+
+			   
+			   .new1
+			   {
+			    border:6px double #8B0000;
+				width:450px;				
+				height:250px;
+			     margin-left: 10%;
+               margin-right:10%;}
+			   
+			   .new2{
+			     border:6px double 	#8B0000;
+         		 	
+                text-align:center;				  
+				font-size: 20px;
+	            color:maroon;
+				
+				position: absolute;
+				  margin-left: 73%;
+                  margin-right: 2%;
+               background-color:#DCDCDC;	
+               margin-top:70px;			   
+			  }
+			
+			   
+		}	 
+   </style>
+	   
+
+   
+   <div class="new2" >
+	
+<p> Verilen sorularda kod bloklarını incele,doğru cevabı vermeye çalış. Doğru sayını not etmeyi unutma.&nbsp &nbsp &nbsp Bol Şans! </p>
+
+	</div>	
+	 
+    <div class="new" align="center"><img src="gif.gif" alt="gif" width="500" height="300"> </div>
+	
+<div class="scp-quizzes-main">
+<div class="scp-quizzes-data">
+  <h3>1. Aşağıdaki kodun çıktısı nedir?</h3>
+    <pre>#include&lt;stdio.h>	
+main() 
+{
+   int x = 5;
+   
+   if(x=5)
+   {	
+      if(x=5) cout<<"5";
+   } 
+   cout << x;
+}
+</pre>
+<br/>
+    <input type="radio" id="Fastlearning" name="question1">
+       <label for="Fastlearning">55</label><br/>
+    <input type="radio"  name="question1">
+       <label>x5</label><br/>
+    <input type="radio" name="question1">
+       <label>5x</label> <br/>
+    <input type="radio" name="question1">
+     <label>5</label> 
+ </div>
+ 
+ <br> <br> <br>   <br> <br> <br> <br> <br> 
+ 
+   <div class="scp-quizzes-data">
+  <h3>2. Aşağıdaki kodun çıktısı nedir?</h3>
+    <pre>#include&lt;stdio.h>	
+main()                                   
+{        
+        int a =3;                       
+              cout("Kodlama");   
+  if(a==3)
+ {		  
+              cout("Ogreniyorum");                           
+ 
+ }                     
+}</pre>
+<br/>
+    <input type="radio" name="question3">
+       <label>Kodlama</label><br/>
+    <input type="radio"  name="question3"id="cevap2">
+       <label for="cevap2">KodlamaOgreniyorum</label><br/>
+    <input type="radio" name="question3" >
+       <label >Ogreniyorum</label> <br/>
+    <input type="radio" name="question3">
+     <label>3 Ogreniyorum</label> 
+	 
+ </div>
+ 
+ 
+ <br> <br> <br> <br> <br> <br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> 
+ <div class="scp-quizzes-data">
+  <h3>3. Aşağıdaki kodun çıktısı nedir?</h3>
+    <pre>#include&lt;stdio.h>	
+main()                                   
+{                                       
+   int x = 5;                            
+   
+if(x==5)        
+{
+ 
+     if(x<6)   
+	                   {	                                 
+                        if(x>4)  
+                                          {	                                 
+                                cout << x + 5;        
+                                 }  		 
+     }              
+                                 }                                     
+   
+   
+cout("dogru");                     
+}
+</pre>
+<br/>
+    <input type="radio" name="question3">
+       <label>5</label><br/>
+    <input type="radio"  name="question3"id="10dogru">
+       <label for="10dogru">10dogru</label><br/>
+    <input type="radio" name="question3" >
+       <label >dogru</label> <br/>
+    <input type="radio" name="question3">
+     <label>5dogru</label> 
+	 
+ </div>
+   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+ <div class="scp-quizzes-data">
+  <h3>4. Aşağıdaki kodda syntax hatası hangi satırdadır?</h3>
+    <pre>#include&lt;stdio.h>	
+main()                                   
+   {                                       
+   int x = 5;                            (3)
+                                         
+   if(x==5)                               (5)
+   {	                                 
+      if(x==5) cout<<"5";               (7)
+   }                                     
+   cout(x);                              (9)
+   }                           
+</pre>
+<br/>
+    <input type="radio" name="question2">
+       <label>5</label><br/>
+    <input type="radio"  name="question2">
+       <label> 3</label><br/>
+    <input type="radio" name="question2" id="inculdefile">
+       <label for="inculdefile"> 9</label> <br/>
+    <input type="radio" name="question2">
+     <label> 7</label> 	 
+ </div>
+ 
+ 	<div class="new1" ><img src="gif2.gif" alt="gif" width="450" height="250" > </div>
+ 
+   <br> <br> <br> <br> <br> 
+   <div class="scp-quizzes-data">
+  <h3>5. Aşağıdaki kodun çıktısı nedir?</h3>
+    <pre>#include&lt;stdio.h>	
+main()                                   
+{                                       
+   int x = 7;                    
+   
+   cout<<"7";             
+   cout<<"x degeri : " + x; 
+   }
+   </pre>
+<br/>
+    <input type="radio" name="question3">
+       <label>7 7</label><br/>
+	    <input type="radio" name="question3">
+   
+      <label>7 x degeri :</label> 
+    <input type="radio" name="question3" >
+       <label >x degeri : 7</label> <br/>
+    <input type="radio"  name="question3"id="7">
+	   <label for="7">7 xdegeri:7</label><br/>
+ </div>
+ 
+ 
+
+<input type="submit" onClick="parent.location='sonuc.html'" value='HAYDİ SONUÇLARA BAKALIM'>
+</div>
+
+
+</body></html>
