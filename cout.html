@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sürükle ve Bırak!</title>
+</head>
+<body>
+    <style>
+      
+            
+		.drop_zone {
+		
+    background-:transparent; 
+    border: #009900 3px solid;
+    width: 400px; 
+    height: 200px;
+    padding: 8px;
+    font-size: 50px;
+	color:green;
+	 text-align: center;
+	  margin-left: 15%;
+               margin-right:10%;
+}
+		
+				.buton {
+               
+               margin-left: 32%;
+               margin-right:32%;
+
+                }
+				.new {
+			   margin-left: 10%;
+               margin-right: 2%;
+
+                  display:inline-block; 
+			      cursor: move;
+    
+ 
+                }
+				
+				.new1 {
+			   margin-left: 10%;
+               margin-right: 2%;
+
+                  display:inline-block; 
+			      cursor: move;
+
+
+                }
+		        
+				   .new5{  
+                border:6px double 	#008000;
+         		 	
+                text-align:center;				  
+				font-size: 20px;
+	            color:green;
+				
+				position: absolute;
+				  margin-left: 49%;
+                  margin-right: 2%;
+               background-color:#DCDCDC;
+			   margin-bottom:150px;
+
+				 }
+				
+				
+				
+					   .new6{  
+           margin-top:40px;
+	            color:green;						
+               margin-left:133%
+             
+
+				 }
+					
+					   .new7{  
+					   
+					   border:6px double 	#008000;
+					     background-color:#DCDCDC;
+						  text-align:center;	
+            margin-top:150px;
+	         position: absolute;
+				  margin-left: 56%;
+                  margin-right: 2%;
+             
+				}
+				
+				body {
+            
+            background-image: url(coutbckg.png);
+			background-repeat: no-repeat;
+            background-size: cover;
+			  margin-left: 28%;
+               margin-right:28%;
+
+			   
+			
+			  }
+	
+    </style>
+	 <div class="new6" style="font-size:40px;color:green;">
+         
+      <i class="fa fa-map-pin"></i><br>
+	  
+    </div>
+ 
+
+	 
+	<div class="new5">	
+    <p>Yukarıdaki nesneleri mouse yardımıyla sürükleyip aşağıdakilerle  eşleştir,kod bloğunu çöz.Bol şans!  </p>
+    </div>	
+  <div class="new7" style="font-size:40px;color:green;">
+         
+	 <p style="font-size:30px;color:green;">  Skor : <text id="score001"> 0 </text></p>
+	  
+    </div>
+
+
+   <div class="new" style="font-size:30px;color:green;" ondrop="drop002(event)" ondragstart="dragStart002(event)" draggable="true" id="target002">
+         
+      <i class="fa fa-birthday-cake fa-2x"></i><br>
+	   <i text= >&nbsp;<<</i>
+    </div>
+	
+
+	 <div class="new" style="font-size:30px;color:green;" ondrop="drop003(event)" ondragstart="dragStart003(event)" draggable="true" id="target003">
+         
+      <i class="fa fa-futbol-o fa-2x"></i><br>
+	   <i text= >"hello"</i><br>
+
+    </div>
+	 <div class="new" style="font-size:30px;color:green;" ondrop="drop004(event)" ondragstart="dragStart004(event)" draggable="true" id="target004">
+         
+      <i class="fa fa-heart fa-2x"></i><br>
+	   <i text= > &nbsp; &nbsp;;</i>
+    </div>
+	
+  <div class="new" style="font-size:30px;color:green;" ondrop="drop001(event)" ondragstart="dragStart001(event)" draggable="true" id="target001">
+         <i class="fa fa-key fa-2x"></i><br>
+         <i text= > &nbsp;cout</i>
+    </div>
+	
+     <br /><br /><br />
+	
+	<div class ="drop_zone"    id="place006"></div>
+	 <br />
+    <button class="buton" img src = "new.jpg" style="background:transparent url(img/button02.jpg) no-repeat left top; width:200px; height:40px; font-size:20px; color:green;" onclick="submit001()" > DERLE </button>
+    <p id="message001"> </p> 
+	 <br />
+    <div class="new1" style="font-size:40px;color:green;" ondrop="drop006(event)" ondragover="allowDrop001(event)" id="place001">
+	   <i class="fa fa-lock fa-2x"></i>
+	</div>
+
+    <div class="new1" style="font-size:40px;color:green" ondrop="drop007(event)" ondragover="allowDrop002(event)" id="place002">
+	
+	  <i class="fa fa-gift fa-2x"></i>
+	  </div>
+
+	  <div class="new1" style="font-size:40px;color:green" ondrop="drop008(event)" ondragover="allowDrop003(event)" id="place003">
+	
+	  <i class="fa fa-trophy fa-2x"></i>
+	  </div>
+
+   <div class="new1" style="font-size:40px;color:green" ondrop="drop009(event)" ondragover="allowDrop004(event)" id="place004">
+	
+	  <i class="fa fa-heart-o fa-2x"></i>
+	  </div>
+	  
+   
+
+    <script>
+    var b = 0;
+    b++;
+function dragStart001(event) {
+    event.dataTransfer.setData("choice001", event.target.id);
+}
+
+function dragStart002(event) {
+    event.dataTransfer.setData("choice002", event.target.id);
+}
+
+function dragStart003(event) {
+    event.dataTransfer.setData("choice003", event.target.id);
+}
+
+function dragStart004(event) {
+    event.dataTransfer.setData("choice004", event.target.id);
+}
+
+
+function allowDrop001(event) {
+    event.preventDefault();
+}
+
+function allowDrop002(event) {
+    event.preventDefault();
+}
+
+function allowDrop003(event) {
+    event.preventDefault();
+}
+
+function allowDrop004(event) {
+    event.preventDefault();
+}
+
+
+function drop006(event) {
+    var data = event.dataTransfer.getData("choice001");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+        place001.innerHTML = "cout"; 
+}
+
+function drop007(event) {
+    var data = event.dataTransfer.getData("choice002");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+        place002.innerHTML = "<<";
+}
+
+function drop008(event) {
+    var data = event.dataTransfer.getData("choice003");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+        place003.innerHTML = "hello";
+}
+
+function drop009(event) {
+    var data = event.dataTransfer.getData("choice004");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+         place004.innerHTML = ";"; 
+}
+
+
+
+function drop001(event) {
+    event.preventDefault();
+}
+
+function drop002(event) {
+     event.preventDefault(); 
+}
+
+function drop003(event) {
+    event.preventDefault();
+
+}
+
+function drop004(event) {
+    event.preventDefault(); 
+}
+
+
+function submit001() {
+if (b > 4) {
+
+ place006.innerHTML = "hello";
+
+}
+}
+(function() {
+    $( ".new" ).draggable();
+  });
+    </script>
+</body>
+</html>
